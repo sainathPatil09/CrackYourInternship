@@ -1,11 +1,11 @@
 // "static void main" must be defined in a public class.
-class MapHeap{
+class MaxHeap{
     ArrayList<Integer> heap;
-    public MapHeap(){
+    public MaxHeap(){
         heap = new ArrayList<>();
     }
     
-    public MapHeap(int[] nums){
+    public MaxHeap(int[] nums){
         int n = nums.length;
         
         heap = new ArrayList<>();
@@ -19,7 +19,7 @@ class MapHeap{
         
     }
     
-    public int peek(){
+    public int peek(){                             TC = O(1)   SC O(1)
         if(heap.size() == 0){
             System.out.println("Heap is empty");
         }
@@ -27,7 +27,7 @@ class MapHeap{
         return heap.get(0);
     }
     
-    public void heapify(int index){
+    public void heapify(int index){                TC O(logn)  SC O(1)                
         int size = heap.size();
         int larget = index;
         while(index < size){
@@ -49,7 +49,7 @@ class MapHeap{
         }
     }
     
-    public void insert(int val){
+    public void insert(int val){                TC O(logn)   SC O(1)
         heap.add(val);
         int index = heap.size()-1;
         
@@ -67,7 +67,7 @@ class MapHeap{
         
     }
     
-    public int pop(){
+    public int pop(){                                          TC O(logn)   SC O(1)
         if(heap.size() == 0){
             System.out.println("Heap is Empty");
             return -1;
@@ -103,11 +103,11 @@ class MapHeap{
 public class Main {
     public static void main(String[] args) {
         int[] arr = new int[]{20,10,17,30,40};
-        MapHeap mh = new MapHeap(arr);
+        MapHeap mh = new MaxHeap(arr);
         
         mh.print();
         
-//         MapHeap mh = new MapHeap();
+//         MapHeap mh = new MaxHeap();
         
 //         mh.insert(25);
 //         mh.insert(30);
